@@ -18,7 +18,15 @@ The shared task setting restricts that systems use only publicly available datas
 
 | Model           | F0.5  |  Paper / Source | Code |
 | ------------- | :-----:| --- | :-----: |
+| T5 ([t5.1.1.xxl](https://github.com/google-research/text-to-text-transfer-transformer/blob/master/released_checkpoints.md)) trained on [cLang-8](https://github.com/google-research-datasets/clang8) (Rothe et al., ACL-IJCNLP 2021) | 68.87 | [A Simple Recipe for Multilingual Grammatical Error Correction](https://arxiv.org/pdf/2106.03830.pdf) | [T5](https://github.com/google-research/text-to-text-transfer-transformer), [cLang-8](https://github.com/google-research-datasets/clang8) |
+| Tagged corruptions - ensemble (Stahlberg and Kumar, 2021)| 68.3 | [Synthetic Data Generation for Grammatical Error Correction with Tagged Corruption Models](https://www.aclweb.org/anthology/2021.bea-1.4.pdf)| [Official](https://github.com/google-research-datasets/C4_200M-synthetic-dataset-for-grammatical-error-correction) |
+| Sequence tagging + token-level transformations + two-stage fine-tuning + (BERT, RoBERTa, XLNet), ensemble (Omelianchuk et al., BEA 2020) | 66.5 | [GECToR – Grammatical Error Correction: Tag, Not Rewrite](https://arxiv.org/pdf/2005.12592.pdf) | [Official](https://github.com/grammarly/gector) |
+| Sequence tagging + token-level transformations + two-stage fine-tuning + XLNet, single model (Omelianchuk et al., BEA 2020) | 65.3 | [GECToR – Grammatical Error Correction: Tag, Not Rewrite](https://arxiv.org/pdf/2005.12592.pdf) | [Official](https://github.com/grammarly/gector) |
+| Transformer + Pre-train with Pseudo Data + BERT (Kaneko et al., ACL 2020) | 65.2 | [Encoder-Decoder Models Can Benefit from Pre-trained Masked Language Models in Grammatical Error Correction](https://arxiv.org/pdf/2005.00987.pdf) | [Official](https://github.com/kanekomasahiro/bert-gec) |
+| Transformer + Pre-train with Pseudo Data (Kiyono et al., EMNLP 2019) | 65.0 | [An Empirical Study of Incorporating Pseudo Data into Grammatical Error Correction](https://arxiv.org/abs/1909.00502) | [Official](https://github.com/butsugiri/gec-pseudodata) |
+| Sequence Labeling with edits using BERT, Faster inference (Ensemble)  (Awasthi et al., EMNLP 2019) | 61.2 | [Parallel Iterative Edit Models for Local Sequence Transduction](https://www.aclweb.org/anthology/D19-1435.pdf) | [Official](https://github.com/awasthiabhijeet/PIE) |
 | Copy-Augmented Transformer + Pre-train (Zhao and Wang, NAACL 2019) | 61.15 | [Improving Grammatical Error Correction via Pre-Training a Copy-Augmented Architecture with Unlabeled Data](https://arxiv.org/pdf/1903.00138.pdf) | [Official](https://github.com/zhawe01/fairseq-gec) |
+| Sequence Labeling with edits using BERT, Faster inference (Single Model) (Awasthi et al., EMNLP 2019) | 59.7 | [Parallel Iterative Edit Models for Local Sequence Transduction](https://www.aclweb.org/anthology/D19-1435.pdf) | [Official](https://github.com/awasthiabhijeet/PIE) |
 | CNN Seq2Seq + Quality Estimation (Chollampatt and Ng, EMNLP 2018) | 56.52 | [Neural Quality Estimation of Grammatical Error Correction](http://aclweb.org/anthology/D18-1274) | [Official](https://github.com/nusnlp/neuqe/) |
 | SMT + BiGRU (Grundkiewicz and Junczys-Dowmunt, 2018) |  56.25 | [Near Human-Level Performance in Grammatical Error Correction with Hybrid Machine Translation](http://aclweb.org/anthology/N18-2046)| NA |
 | Transformer (Junczys-Dowmunt et al., 2018) | 55.8 | [Approaching Neural Grammatical Error Correction as a Low-Resource Machine Translation Task](http://aclweb.org/anthology/N18-1055)| [Official](https://github.com/grammatical/neural-naacl2018) |
@@ -62,6 +70,8 @@ _**Restricted**_: uses only publicly available datasets. _**Unrestricted**_: use
 
 | Model           | GLEU  |  Paper / Source | Code |
 | ------------- | :-----:| --- | :-----: |
+| Tagged corruptions (Stahlberg and Kumar, 2021)| 64.7 | [Synthetic Data Generation for Grammatical Error Correction with Tagged Corruption Models](https://www.aclweb.org/anthology/2021.bea-1.4.pdf)| [Official](https://github.com/google-research-datasets/C4_200M-synthetic-dataset-for-grammatical-error-correction) |
+| Transformer + Pre-train with Pseudo Data + BERT (Kaneko et al., ACL 2020) | 62.0 | [Encoder-Decoder Models Can Benefit from Pre-trained Masked Language Models in Grammatical Error Correction](https://arxiv.org/pdf/2005.00987.pdf) | [Official](https://github.com/kanekomasahiro/bert-gec) |
 | SMT + BiGRU (Grundkiewicz and Junczys-Dowmunt, 2018) |  61.50 | [Near Human-Level Performance in Grammatical Error Correction with Hybrid Machine Translation](http://aclweb.org/anthology/N18-2046)| NA |
 | Transformer (Junczys-Dowmunt et al., 2018) | 59.9 | [Approaching Neural Grammatical Error Correction as a Low-Resource Machine Translation Task](http://aclweb.org/anthology/N18-1055)| NA |
 | CNN Seq2Seq (Chollampatt and Ng, 2018)| 57.47 | [ A Multilayer Convolutional Encoder-Decoder Neural Network for Grammatical Error Correction](https://www.aaai.org/ocs/index.php/AAAI/AAAI18/paper/viewFile/17308/16137)| [Official](https://github.com/nusnlp/mlconvgec2018) |
@@ -109,6 +119,32 @@ _**Low Resource Track (formerly Unsupervised Track):**_
 In the low resource track, participants may only use the following learner dataset: W&I+LOCNESS development set.   
 
 Since current state-of-the-art systems rely on as much annotated learner data as possible to reach the best performance, the goal of the low resource track is to encourage research into systems that do not rely on large amounts of learner data. This track should be of particular interest to researchers working on GEC for languages where large learner corpora do not exist.   
+
+
+### Results on WI-LOCNESS test set:
+**Restricted track**:
+
+| Model           | F0.5  |  Paper / Source | Code |
+| ------------- | :-----:| --- | :-----: |
+| GECToR large without synthetic pre-training - ensemble (Tarnavskyi and Omelianchuk, 2021) | 76.05 | [Improving Sequence Tagging for Grammatical Error Correction](https://er.ucu.edu.ua/handle/1/2707) | [Official](https://github.com/MaksTarnavskyi/gector-large) |
+| T5 ([t5.1.1.xxl](https://github.com/google-research/text-to-text-transfer-transformer/blob/master/released_checkpoints.md)) trained on [cLang-8](https://github.com/google-research-datasets/clang8) (Rothe et al., ACL-IJCNLP 2021) | 75.88 | [A Simple Recipe for Multilingual Grammatical Error Correction](https://arxiv.org/pdf/2106.03830.pdf) | [T5](https://github.com/google-research/text-to-text-transfer-transformer), [cLang-8](https://github.com/google-research-datasets/clang8) |
+| Tagged corruptions - ensemble (Stahlberg and Kumar, 2021)| 74.9 | [Synthetic Data Generation for Grammatical Error Correction with Tagged Corruption Models](https://www.aclweb.org/anthology/2021.bea-1.4.pdf)| [Official](https://github.com/google-research-datasets/C4_200M-synthetic-dataset-for-grammatical-error-correction) |
+| Sequence tagging + token-level transformations + two-stage fine-tuning + (BERT, RoBERTa, XLNet), ensemble (Omelianchuk et al., BEA 2020) | 73.6 | [GECToR – Grammatical Error Correction: Tag, Not Rewrite](https://arxiv.org/pdf/2005.12592.pdf) | [Official](https://github.com/grammarly/gector) |
+| BEA Combination | 73.18 | [Learning to Combine Grammatical Error Corrections ](https://www.aclweb.org/anthology/W19-4414/) | [official](https://github.com/IBM/learning-to-combine-grammatical-error-corrections) |
+| Sequence tagging + token-level transformations + two-stage fine-tuning + XLNet, single model (Omelianchuk et al., BEA 2020) | 72.4 | [GECToR – Grammatical Error Correction: Tag, Not Rewrite](https://arxiv.org/pdf/2005.12592.pdf) | [Official](https://github.com/grammarly/gector) |
+| Transformer + Pre-train with Pseudo Data (Kiyono et al., EMNLP 2019) | 70.2 | [An Empirical Study of Incorporating Pseudo Data into Grammatical Error Correction](https://arxiv.org/abs/1909.00502) | NA |
+| Transformer + Pre-train with Pseudo Data + BERT (Kaneko et al., ACL 2020) | 69.8 | [Encoder-Decoder Models Can Benefit from Pre-trained Masked Language Models in Grammatical Error Correction](https://arxiv.org/pdf/2005.00987.pdf) | [Official](https://github.com/kanekomasahiro/bert-gec) |
+| Transformer | 69.47  | [Neural Grammatical Error Correction Systems with UnsupervisedPre-training on Synthetic Data](https://www.aclweb.org/anthology/W19-4427)| [Official: Code to be updated soon](https://github.com/grammatical/pretraining-bea2019) |
+| Transformer | 69.00  | [A Neural Grammatical Error Correction System Built OnBetter Pre-training and Sequential Transfer Learning](https://www.aclweb.org/anthology/W19-4423)| [Official](https://github.com/kakaobrain/helo_word/) |
+| Ensemble of models | 66.78  | [The LAIX Systems in the BEA-2019 GEC Shared Task](https://www.aclweb.org/anthology/W19-4416)| NA |
+
+**Low-resource track**:
+
+| Model           | F0.5  |  Paper / Source | Code |
+| ------------- | :-----:| --- | :-----: |
+| Transformer | 64.24  | [Neural Grammatical Error Correction Systems with UnsupervisedPre-training on Synthetic Data](https://www.aclweb.org/anthology/W19-4427)| [Official: Code to be updated soon](https://github.com/grammatical/pretraining-bea2019) |
+| Transformer | 58.80  | [A Neural Grammatical Error Correction System Built OnBetter Pre-training and Sequential Transfer Learning](https://www.aclweb.org/anthology/W19-4423)| [Official](https://github.com/kakaobrain/helo_word/) |
+| Ensemble of models | 51.81  | [The LAIX Systems in the BEA-2019 GEC Shared Task](https://www.aclweb.org/anthology/W19-4416)| NA |
 
  
  **Reference**:
