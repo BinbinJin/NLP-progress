@@ -16,7 +16,8 @@
 - [Entity linking](english/entity_linking.md)
 - [Grammatical error correction](english/grammatical_error_correction.md)
 - [Information extraction](english/information_extraction.md)
-- [Intent Detection and Slot Filling](english/intent_detection_slot_filling.md)
+- [Intent Detection and Slot Filling](english/intent_detection_slot_filling.md) 
+- [Keyphrase Extraction and Generation](english/keyphrase_extraction_generation.md)
 - [Language modeling](english/language_modeling.md)
 - [Lexical normalization](english/lexical_normalization.md)
 - [Machine translation](english/machine_translation.md)
@@ -98,6 +99,8 @@ For more tasks, datasets and results in Chinese, check out the [Chinese NLP](htt
 
 ### Bengali
 - [Part-of-speech Tagging](bengali/part_of_speech_tagging.md)
+- [Emotion Detection](bengali/emotion_detection.md)
+- [Sentiment Analysis](bengali/sentiment_analysis.md)
 
 ### Persian
 - [Named entity recognition](persian/named_entity_recognition.md)
@@ -110,7 +113,11 @@ For more tasks, datasets and results in Chinese, check out the [Chinese NLP](htt
 
 ### German
 
+- [Question Answering](german/question_answering.md)
 - [Summarization](german/summarization.md)
+
+### Arabic
+- [Language modeling](arabic/language_modeling.md)
 
 
 This document aims to track the progress in Natural Language Processing (NLP) and give an overview
